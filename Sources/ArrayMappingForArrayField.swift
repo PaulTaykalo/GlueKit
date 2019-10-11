@@ -47,7 +47,7 @@ private struct Indexmap {
     mutating func replaceArrays(in prerange: Range<Int>, withCounts counts: [Int]) {
         let postrange: Range<Int> = postindex(for: prerange.lowerBound) ..< postindex(for: prerange.upperBound)
         let postdelta = counts.reduce(0, +) - postrange.count
-        for i in CountableRange(prerange).reversed() { // TODO: SortedBag.remove(offsetsIn: prerange)
+        for i in prerange.reversed() { // TODO: SortedBag.remove(offsetsIn: prerange)
             postindices.remove(atOffset: i)
         }
         postindices.shift(startingAt: postindices.index(ofOffset: prerange.lowerBound), by: postdelta)

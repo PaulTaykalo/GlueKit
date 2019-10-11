@@ -26,7 +26,7 @@ public typealias ValueUpdate<Value> = Update<ValueChange<Value>>
 /// Types implementing `ObservableValueType` are generally not type-safe; you must serialize all accesses to them
 /// (including connecting to any of their sources).
 ///
-public protocol ObservableValueType: ObservableType, CustomPlaygroundQuickLookable
+public protocol ObservableValueType: ObservableType
 where Change == ValueChange<Value> {
     /// Returns the type-erased version of this ObservableValueType.
     var anyObservableValue: AnyObservableValue<Value> { get }

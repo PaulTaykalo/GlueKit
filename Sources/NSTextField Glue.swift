@@ -35,7 +35,7 @@ open class GlueForNSTextField: GlueForNSControl {
     }
 }
 
-class GlueKitTextFieldDelegate<Value: LosslessStringConvertible>: NSObject, NSTextFieldDelegate {
+class GlueKitTextFieldDelegate<Value: LosslessStringConvertible>: NSObject, NSTextFieldDelegate, NSControlTextEditingDelegate {
     unowned let view: NSTextField
     var model: AnyUpdatableValue<Value> {
         didSet { reconnect() }
@@ -61,7 +61,7 @@ class GlueKitTextFieldDelegate<Value: LosslessStringConvertible>: NSObject, NSTe
         return Value(view.stringValue) != nil
     }
 
-    override func controlTextDidEndEditing(_ obj: Notification) {
+    func controlTextDidEndEditing(_ obj: Notification) {
         if let value = Value(view.stringValue) {
             model.value = value
         }

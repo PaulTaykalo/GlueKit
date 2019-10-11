@@ -335,12 +335,6 @@ extension ArrayModification: CustomStringConvertible, CustomDebugStringConvertib
     }
 }
 
-extension ArrayModification: CustomPlaygroundQuickLookable {
-    public var customPlaygroundQuickLook: PlaygroundQuickLook {
-        return .text(description)
-    }
-}
-
 extension RangeReplaceableCollection where Index == Int {
     /// Apply `modification` to this array in place.
     public mutating func apply(_ modification: ArrayModification<Iterator.Element>) {

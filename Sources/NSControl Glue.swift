@@ -92,7 +92,7 @@ open class GlueForNSControl: GlueForNSObject {
     public var isEnabled: ConfigSlot<Bool> { return ConfigSlot(glue: self, keyPath: \.isEnabled) }
     public var alignment: ConfigSlot<NSTextAlignment> { return ConfigSlot(glue: self, keyPath: \.alignment) }
     public var font: ConfigSlot<NSFont?> { return ConfigSlot(glue: self, keyPath: \.font) }
-    public var lineBreakMode: ConfigSlot<NSParagraphStyle.LineBreakMode> { return ConfigSlot(glue: self, keyPath: \.lineBreakMode) }
+    public var lineBreakMode: ConfigSlot<NSLineBreakMode> { return ConfigSlot(glue: self, keyPath: \.lineBreakMode) }
     public var usesSingleLineMode: ConfigSlot<Bool> { return ConfigSlot(glue: self, keyPath: \.usesSingleLineMode) }
     public var formatter: ConfigSlot<Formatter?> { return ConfigSlot(glue: self, keyPath: \.formatter) }
     public var baseWritingDirection: ConfigSlot<NSWritingDirection> { return ConfigSlot(glue: self, keyPath: \.baseWritingDirection) }
