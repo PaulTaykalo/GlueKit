@@ -15,5 +15,5 @@ let package = Package(
         .testTarget(name: "GlueKitTests", dependencies: ["GlueKit"], path: "Tests/GlueKitTests"),
         .testTarget(name: "PerformanceTests", dependencies: ["GlueKit"], path: "Tests/PerformanceTests")
     ],
-    swiftLanguageVersions: [4]
+    swiftLanguageVersions: [5]
 )
